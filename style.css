@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+body {
+  overflow: hidden;
+}
+.take-notes {
+  display: flex;
+  height: 100vh;
+}
+
+/*
+// Paper //
+*/
+.paper {
+  margin-top: 2em;
+  outline: none;
+  position: relative;
+  background: #fff;
+  width: 30em;
+  min-height: 80vh;
+  padding: 0.5em 1em 0em 3em;
+  border-radius: 5px;
+  box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#bdbdbd), color-stop(4%, #fff)) 0 4px;
+  background-size: 100% 2rem;
+  line-height: 2rem;
+  overflow-wrap: break-word;
+  transform: scale(1);
+  opacity: 1;
+  transition: transform 0.2s cubic-bezier(.2,1.8,.70,1.4), opacity 0.3s ease-in-out;
+  overflow: hidden;
+  max-height: 80vh;
+}
+.paper:hover {cursor: pointer;}
+.paper:before {
+  font-weight: ;
+  content: '';
+  position: absolute;
+  width: 4px;
+  top: 0;
+  left: 2em;
+  bottom: 0;
+  border: 1px solid;
+  border-color: transparent #ff7e7e;
+}
+.paper > * {
+  width: fit-content;
+  word-break: break-word;
+}
+
+/*
+// Side bar //
+*/
+.side-bar main {
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.side-bar main::-webkit-scrollbar {
+  display: none;
+}
+.side-bar {
+  position: relative;
+  user-select: none;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 30em;
+  transition: width 0.2s cubic-bezier(.69,.1,.76,1);
+  background-image:  linear-gradient(rgb(32, 90, 207), rgb(32, 90, 207));
+}
+
+.side-bar .paper {
+  width: calc(100% - 2em);
+  min-height: 30%;
+  max-height: 30%;
+  font-size: 70%;
+  margin: 1em;
+}
+.side-bar .paper:active{cursor: grabbing;}
+.side-bar .btn-top, .side-bar .btn-bot {
+  user-select: none;
+  color: #fff;
+  font-size: 150%;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+.side-bar .btn-top:hover, .side-bar .btn-bot:hover {cursor: pointer;}
+.side-bar .btn-top:active, .side-bar .btn-bot:active {opacity: 0.8;}
+.side-bar .btn-open {
+  right: -3.5rem;
+  bottom: 1rem;
+  position: absolute;
+  background-color: orange;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*
+// Note Div
+*/
+
+.note-div {
+  padding-top: 2em;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #2980b9;
+  background-image: repeating-linear-gradient(135deg, hsl(285,76%,57%) 0px, hsl(285,76%,57%) 44px,hsl(330,76%,57%) 44px, hsl(330,76%,57%) 88px,hsl(15,76%,57%) 88px, hsl(15,76%,57%) 132px,hsl(60,76%,57%) 132px, hsl(60,76%,57%) 176px,hsl(105,76%,57%) 176px, hsl(105,76%,57%) 220px,hsl(150,76%,57%) 220px, hsl(150,76%,57%) 264px,hsl(195,76%,57%) 264px, hsl(195,76%,57%) 308px,hsl(240,76%,57%) 308px, hsl(240,76%,57%) 352px);
+  background-image: repeating-linear-gradient(90deg, rgb(75, 117, 213) 0px, rgb(75, 117, 213) 102px,rgb(41, 95, 208) 102px, rgb(41, 95, 208) 204px,rgb(66, 112, 212) 204px, rgb(66, 112, 212) 306px,rgb(32, 90, 207) 306px, rgb(32, 90, 207) 408px,rgb(58, 106, 211) 408px, rgb(58, 106, 211) 510px,rgb(83, 123, 214) 510px, rgb(83, 123, 214) 612px,rgb(24, 84, 206) 612px, rgb(24, 84, 206) 714px,rgb(49, 101, 209) 714px, rgb(49, 101, 209) 816px);
+}
+
+.note-div button, .btn-open {
+  position: absolute;
+  right: 1rem;
+  height: 2.5rem;
+  width: 2.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1.5em;
+  font-weight: bolder;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.15);
+  outline: none;
+}
+.note-div button:hover, .btn-open:hover {cursor: pointer;}
+.note-div button:active, .btn-open:active {opacity: 0.8;}
+.note-div h1 {
+  user-select: none;
+  top: 1em;
+  color: #fff;
+  font-weight: normal;
+  border-bottom: 2px solid #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.note-div .paper h2 {
+  width: 100%;
+  text-align: center;
+}
+.note-div .paper {
+  cursor: text;
+}
+.note-div .paper:active {cursor: grabbing;}
+
+/*
+// Tools //
+*/
+.tools, .align, .utilities {
+  position: relative;
+  left: 20em;
+  background-color: orange;
+}
+.tools {top: 4%;}
+.note-div .btn-add {background-color: limegreen; top: 0;}
+.note-div .btn-remove {background-color: red; top: 3rem;}
+.note-div .btn-save {background-color: rgb(40, 152, 156); top: 6rem;}
+
+/*
+// Align //
+*/
+svg {
+  user-select: none;
+  margin: auto;
+  display: flex;
+  width: 60%;
+}
+.align {top: 26%;}
+.align .btn-align-left {background-color: #333;}
+.align .btn-align-center {top: 3rem;background-color: #333;}
+.align .btn-aling-right {top: 6rem;background-color: #333;}
+
+/*
+// Utilities //
+*/
+.utilities {top: 48%;}
+.utilities .btn-bold {top: 0rem; background-color: purple;}
+.utilities .btn-underline {top: 3rem; background-color: aqua;}
+.utilities .btn-italic {top: 4em; background-color: rgb(240, 207, 23); display: flex;}
+.utilities .btn-italic > * {position: relative; left: 0.6rem;}
+.utilities .btn-bullet {top: 9rem; background-color: #333;}
+
+/*
+// Confirm Delete //
+*/
+.confirm-delete {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #00000099;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
+}
+
+.confirm-delete .question {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 0.5em;
+}
+
+.confirm-delete button {
+  user-select: none;
+  border: 0;
+  background-color: limegreen;
+  height: 2em;
+  width: 2em;
+  border-radius: 0.5em;
+  color: #fff;
+  font-weight: bold;
+  outline: none;
+  /*  box-shadow: 2px 2px 0 rgba(0,0,0,0.15);  */
+}
+.confirm-delete button:last-of-type {background-color:red;}
+.confirm-delete button:hover {cursor: pointer;}
+.confirm-delete button:active {opacity: 0.8;}
+
+
+.confirm-delete .btns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 0.5em;
+}
+.close {
+  width: 0%;
+}
+/*
+@media (min-width: 1043px) {
+  .utilities, .tools, .align {
+    right: 7%;
+  }
+}
+@media (min-width: 1140px) {
+  .utilities, .tools, .align {
+    right: 14%;
+  }
+}
+@media (min-width: 1220px) {
+  .utilities, .tools, .align {
+    right: 8em;
+  }
+}
+@media (min-width: 1300px) {
+  .utilities, .tools, .align {
+    right: 20%;
+  }
+}
+*/
