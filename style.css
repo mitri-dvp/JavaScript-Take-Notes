@@ -138,6 +138,7 @@ body {
 }
 .note-div button:hover, .btn-open:hover {cursor: pointer;}
 .note-div button:active, .btn-open:active {opacity: 0.8;}
+.btn-open {background-color: orange;}
 .note-div h1 {
   user-select: none;
   top: 1em;
