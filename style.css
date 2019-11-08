@@ -101,7 +101,6 @@ body {
   right: -3.5rem;
   bottom: 1rem;
   position: absolute;
-  background-color: orange;
   z-index: 1;
   display: flex;
   justify-content: center;
@@ -163,7 +162,6 @@ body {
 .tools, .align, .utilities {
   position: relative;
   left: 20em;
-  background-color: orange;
 }
 .tools {top: 4%;}
 .note-div .btn-add {background-color: limegreen; top: 0;}
@@ -263,3 +261,41 @@ svg {
   }
 }
 */
+
+@media (max-width: 930px) {
+  .btn-open, .side-bar {display: none;}
+}
+@media (max-width: 610px) {
+  .paper {
+    margin-top: 2em;
+    outline: none;
+    position: relative;
+    background: #fff;
+    width: 90%;
+    min-height: 50vh;
+    padding: 0.5em 1em 0em 3em;
+    border-radius: 5px;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#bdbdbd), color-stop(4%, #fff)) 0 4px;
+    background-size: 100% 2rem;
+    line-height: 2rem;
+    overflow-wrap: break-word;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.2s cubic-bezier(.2,1.8,.70,1.4), opacity 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 80vh;
+  }
+  .note-div button, .btn-open {position: unset;}
+  .utilities, .tools, .align {
+    position: absolute;
+    top: 70%;
+    width: fit-content;
+    display: flex;
+  }
+  .utilities{top: 77.5%;}
+  .align{top: 85%;}
+  .tools, .utilities, .align {left: unset;}
+  .tools >*, .utilities >*, .align >* {margin: 0.5em;}
+} 
+
