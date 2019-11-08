@@ -268,7 +268,7 @@ svg {
 }
 @media (max-width: 610px) {
   .paper {
-    margin-top: 2em;
+    margin-top: 0.5em;
     outline: none;
     position: relative;
     background: #fff;
@@ -298,5 +298,6 @@ svg {
   .align{top: 85%;}
   .tools, .utilities, .align {left: unset;}
   .tools >*, .utilities >*, .align >* {margin: 0.5em;}
+  .note-div {padding-top: 0.5em;}
 } 
 
