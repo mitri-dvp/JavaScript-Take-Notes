@@ -15,7 +15,8 @@ You can write anything on the Note, it features text styling tools to help you w
     - Insert **Bullet Points**.  
     - And **Save** your notes.  
   - Save all data to **local storage**.  
-  - Nice animations.  
+  - Nice animations.    
+    
 This was made with only pure **vanilla JavaScript**.    
   
 If you are interested in working together, feel free to contact me! <mitri.dvp@gmail.com>
