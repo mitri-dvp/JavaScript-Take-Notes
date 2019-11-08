@@ -273,7 +273,7 @@ svg {
     position: relative;
     background: #fff;
     width: 90%;
-    min-height: 50vh;
+    min-height: 50%;
     padding: 0.5em 1em 0em 3em;
     border-radius: 5px;
     box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
