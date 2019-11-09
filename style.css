@@ -267,13 +267,14 @@ svg {
   .btn-open, .side-bar {display: none;}
 }
 @media (max-width: 610px) {
+  .note-div h1 {display: none;}
   .paper {
     margin-top: 0.5em;
     outline: none;
     position: relative;
     background: #fff;
     width: 90%;
-    min-height: 50%;
+    min-height: 20em;
     padding: 0.5em 1em 0em 3em;
     border-radius: 5px;
     box-shadow: 8px 8px 0 rgba(0,0,0,0.15);
@@ -290,12 +291,12 @@ svg {
   .note-div button, .btn-open {position: unset;}
   .utilities, .tools, .align {
     position: absolute;
-    top: 70%;
+    top: 60%;
     width: fit-content;
     display: flex;
   }
-  .utilities{top: 77.5%;}
-  .align{top: 85%;}
+  .utilities{top: 67.5%;}
+  .align{top: 75%;}
   .tools, .utilities, .align {left: unset;}
   .tools >*, .utilities >*, .align >* {margin: 0.5em;}
   .note-div {padding-top: 0.5em;}
